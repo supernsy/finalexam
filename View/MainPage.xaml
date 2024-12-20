@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:i_hate_this.ViewModel"
+             xmlns:local="clr-namespace:i_hate_this"
+             x:DataType="vm:MainViewModel"
+             x:Class="i_hate_this.View.MainPage">
+    
+    <!--<ContentPage.Resources>
+        <local:SliderValueToTextConverter x:Key="TextConverter" />
+        <local:SliderValueToColorConverter x:Key="ColorConverter" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <Grid VerticalOptions="CenterAndExpand"
+              RowDefinitions="Auto,Auto"
+              ColumnDefinitions="Auto,*"
+              Margin="20">
+
+
+
+                <Label x:Name="label1"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Text="{Binding SliderValue, StringFormat='{0:F0}'}"
+                   HorizontalOptions="CenterAndExpand" />
+
+
+                <Slider x:Name="slider1"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    Minimum="0" Maximum="100"
+                    Value="{Binding SliderValue}" />
+
+
+                <Label x:Name="label2"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding SliderValue, Converter={StaticResource TextConverter}}"
+                   TextColor="{Binding SliderValue, Converter={StaticResource ColorConverter}}"
+                   HorizontalOptions="CenterAndExpand" />
+
+            </Grid>
+        </StackLayout>
+    </ScrollView>-->
+    <StackLayout Margin="40,0" VerticalOptions="CenterAndExpand">
+        <Entry x:Name="PhoneEntry"
+               HorizontalTextAlignment="Center"
+               Placeholder="0112223333"
+               HorizontalOptions="FillAndExpand"
+               TextChanged="OnPhoneEntryTextChanged" />
+        <Label x:Name="PhoneErrorLabel"
+               Text="Invalid Phone Number"
+               TextColor="Red"
+               IsVisible="False" />
+
+        <Entry x:Name="PasswordEntry"
+               HorizontalTextAlignment="Center"
+               IsPassword="True"
+               Placeholder="Password"
+               HorizontalOptions="FillAndExpand"
+               TextChanged="OnPasswordEntryTextChanged" />
+        <Label x:Name="PasswordErrorLabel"
+               Text="Password length should be greater than 5"
+               TextColor="Red"
+               IsVisible="False" />
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Center"
+                     Margin="0,15">
+            <CheckBox x:Name="TermsAndConditionsCheckbox"
+                      HorizontalOptions="Start"
+                      CheckedChanged="OnTermsCheckboxCheckedChanged" />
+            <Label x:Name="TermsAndConditionsLabel"
+                   Text="I have read the terms and conditions"
+                   TextColor="Black"
+                   FontSize="Small"
+                   HorizontalOptions="Start"
+                   Margin="5">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTermsLabelTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+        <Button x:Name="RegisterButton"
+                Text="Register"
+                FontSize="Medium"
+                CornerRadius="20"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand"
+                IsEnabled="False" />
+    </StackLayout>
+
+    
+        <!--<StackLayout>
+            <Button Text="Load Posts" Command="{Binding LoadPostsCommand}" />
+            <ListView ItemsSource="{Binding Posts}" SelectedItem="{Binding SelectedPost}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" Detail="{Binding Body}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Create Post" Command="{Binding CreatePostCommand}" />
+            <Button Text="Update Post" Command="{Binding UpdatePostCommand}" IsEnabled="{Binding SelectedPost}" />
+            <Button Text="Delete Post" Command="{Binding DeletePostCommand}" IsEnabled="{Binding SelectedPost}" />
+        </StackLayout>-->
+    
+
+</ContentPage>
